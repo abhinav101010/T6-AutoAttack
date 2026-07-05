@@ -1,0 +1,69 @@
+# Compiled class files
+*.class
+
+# Package files
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Build directories
+build/
+out/
+bin/
+
+# Gradle
+.gradle/
+local.properties
+*.lock
+*.bin
+*.backup
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+classes/
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Minecraft mod specific
+run/
+logs/
+crash-reports/
+*.log
+extracted-mod/
+
+# Maven
+target/
+
+# Fabric/Forge metadata
+.fabric/
+loom-cache/
+fabric-loom-versions.xml
+export_classpath.json
+
+# Claude Code
+.claude/
+
+# Vim / Emacs
+*.swp
+*.swo
+*~
+
+# Environment
+.env

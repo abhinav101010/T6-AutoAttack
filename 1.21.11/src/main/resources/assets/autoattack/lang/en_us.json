@@ -1,0 +1,6 @@
+{
+  "autoattack.config.title": "Auto Attack Settings",
+  "autoattack.config.category.general": "General",
+  "autoattack.config.enabled": "Enable Auto Attack",
+  "autoattack.config.enabled.tooltip": "When enabled, automatically attacks entities when holding the attack button."
+}
