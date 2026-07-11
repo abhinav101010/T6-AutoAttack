@@ -41,6 +41,18 @@ public class ConfigScreenBuilder {
             .build()
         );
 
+        // Mace tick delay slider (0-20 ticks)
+        general.addEntry(entry.startIntSlider(
+                Text.translatable("autoattack.config.maceTickDelay"),
+                AutoAttackConfig.INSTANCE.maceTickDelay,
+                0, 20
+            )
+            .setDefaultValue(0)
+            .setTooltip(Text.translatable("autoattack.config.maceTickDelay.tooltip"))
+            .setSaveConsumer(newValue -> AutoAttackConfig.INSTANCE.maceTickDelay = newValue)
+            .build()
+        );
+
         return builder.build();
     }
 }

@@ -26,6 +26,11 @@ public class AutoAttackConfig {
     public boolean enabled = true;
 
     /**
+     * Tick delay between mace attacks (0 = spam every tick, max 20 = 1 second).
+     */
+    public int maceTickDelay = 0;
+
+    /**
      * Load config from disk. Creates default config if file doesn't exist.
      */
     public static void load() {

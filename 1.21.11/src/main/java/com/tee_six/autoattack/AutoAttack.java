@@ -20,6 +20,9 @@ public class AutoAttack implements ClientModInitializer {
 
     public static final Logger LOGGER = LoggerFactory.getLogger("autoattack");
 
+    /** Tick counter for mace delay */
+    private static int maceTickCounter = 0;
+
     @Override
     public void onInitializeClient() {
         AutoAttackConfig.load();
@@ -45,8 +48,17 @@ public class AutoAttack implements ClientModInitializer {
         if (!isMace) {
             // For non-mace weapons, only attack when cooldown is ready
             if (client.player.getAttackCooldownProgress(0.0f) < 1.0f) return;
+            maceTickCounter = 0; // reset mace counter when not holding mace
+        } else {
+            // For mace, apply tick delay
+            int delay = AutoAttackConfig.INSTANCE.maceTickDelay;
+            if (delay > 0) {
+                maceTickCounter++;
+                if (maceTickCounter < delay) return;
+                maceTickCounter = 0; // reset after delay elapsed
+            }
+            // delay == 0 means spam every tick (no counter needed)
         }
-        // For mace, skip cooldown check - allow instant re-attacks
 
         // Check crosshair target
         if (client.crosshairTarget == null) return;

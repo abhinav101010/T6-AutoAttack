@@ -2,5 +2,7 @@
   "autoattack.config.title": "Auto Attack Settings",
   "autoattack.config.category.general": "General",
   "autoattack.config.enabled": "Enable Auto Attack",
-  "autoattack.config.enabled.tooltip": "When enabled, automatically attacks entities when holding the attack button."
+  "autoattack.config.enabled.tooltip": "When enabled, automatically attacks entities when holding the attack button.",
+  "autoattack.config.maceTickDelay": "Mace Tick Delay",
+  "autoattack.config.maceTickDelay.tooltip": "Delay between mace attacks in ticks. 0 = spam continuously, 20 = 1 second between hits."
 }
