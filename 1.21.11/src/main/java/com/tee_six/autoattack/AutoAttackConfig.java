@@ -26,7 +26,13 @@ public class AutoAttackConfig {
     public boolean enabled = true;
 
     /**
-     * Tick delay between mace attacks (0 = spam every tick, max 20 = 1 second).
+     * Whether to continuously spam mace attacks (bypasses vanilla cooldown).
+     * When false, mace waits for normal cooldown like other weapons.
+     */
+    public boolean maceContinuousSpam = true;
+
+    /**
+     * Tick delay between mace attacks when spam is enabled (0 = every tick, max 20 = 1 second).
      */
     public int maceTickDelay = 0;
 

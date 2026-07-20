@@ -43,21 +43,21 @@ public class AutoAttack implements ClientModInitializer {
         // Check if player is not blocking (shield)
         if (client.player.isBlocking()) return;
 
-        // Check cooldown - bypass for mace
+        // Check cooldown
         boolean isMace = isHoldingMace(client.player);
-        if (!isMace) {
-            // For non-mace weapons, only attack when cooldown is ready
+        if (!isMace || !AutoAttackConfig.INSTANCE.maceContinuousSpam) {
+            // Non-mace OR mace spam disabled → respect vanilla cooldown
             if (client.player.getAttackCooldownProgress(0.0f) < 1.0f) return;
-            maceTickCounter = 0; // reset mace counter when not holding mace
+            maceTickCounter = 0;
         } else {
-            // For mace, apply tick delay
+            // Mace + spam enabled → apply tick delay
             int delay = AutoAttackConfig.INSTANCE.maceTickDelay;
             if (delay > 0) {
                 maceTickCounter++;
                 if (maceTickCounter < delay) return;
-                maceTickCounter = 0; // reset after delay elapsed
+                maceTickCounter = 0;
             }
-            // delay == 0 means spam every tick (no counter needed)
+            // delay == 0 means spam every tick
         }
 
         // Check crosshair target

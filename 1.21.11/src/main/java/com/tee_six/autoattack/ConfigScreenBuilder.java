@@ -41,7 +41,18 @@ public class ConfigScreenBuilder {
             .build()
         );
 
-        // Mace tick delay slider (0-20 ticks)
+        // Mace continuous spam toggle
+        general.addEntry(entry.startBooleanToggle(
+                Text.translatable("autoattack.config.maceContinuousSpam"),
+                AutoAttackConfig.INSTANCE.maceContinuousSpam
+            )
+            .setDefaultValue(true)
+            .setTooltip(Text.translatable("autoattack.config.maceContinuousSpam.tooltip"))
+            .setSaveConsumer(newValue -> AutoAttackConfig.INSTANCE.maceContinuousSpam = newValue)
+            .build()
+        );
+
+        // Mace tick delay slider (only matters when spam is enabled)
         general.addEntry(entry.startIntSlider(
                 Text.translatable("autoattack.config.maceTickDelay"),
                 AutoAttackConfig.INSTANCE.maceTickDelay,

@@ -15,6 +15,9 @@ build/
 out/
 bin/
 
+# Graphify
+*/graphify-out/
+
 # Gradle
 .gradle/
 local.properties

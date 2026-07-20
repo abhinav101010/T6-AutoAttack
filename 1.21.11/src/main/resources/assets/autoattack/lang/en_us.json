@@ -3,6 +3,8 @@
   "autoattack.config.category.general": "General",
   "autoattack.config.enabled": "Enable Auto Attack",
   "autoattack.config.enabled.tooltip": "When enabled, automatically attacks entities when holding the attack button.",
+  "autoattack.config.maceContinuousSpam": "Mace Continuous Spam",
+  "autoattack.config.maceContinuousSpam.tooltip": "When enabled, mace bypasses vanilla cooldown and attacks continuously. When disabled, mace waits for normal cooldown like other weapons.",
   "autoattack.config.maceTickDelay": "Mace Tick Delay",
-  "autoattack.config.maceTickDelay.tooltip": "Delay between mace attacks in ticks. 0 = spam continuously, 20 = 1 second between hits."
+  "autoattack.config.maceTickDelay.tooltip": "Delay between mace attacks in ticks (only applies when spam is enabled). 0 = every tick, 20 = 1 second between hits."
 }
